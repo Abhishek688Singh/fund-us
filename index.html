@@ -1,19 +1,61 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Fund Me App</title>
-  </head>
+<html lang="en">
 
-  <body>
-    <button id="connectButton">Connect</button>
-    <button id="balanceButton">getBalance</button>
-    <button id="withdrawButton">Withdraw</button>
-    <!-- <form> -->
-    <label for="ethAmount">ETH Amount</label>
-    <input id="ethAmount" placeholder="0.1" />
-    <button type="button" id="fundButton" > Fund </button>
-    <!-- </form> -->
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>FundMe | Web3 dApp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="background"></div>
+
+  <main class="app">
+    <header class="header">
+      <h1>⚡ FundMe Protocol</h1>
+      <p>Decentralized Ethereum Crowdfunding</p>
+    </header>
+
+    <section class="card glass">
+      <div class="address">
+        <p id="connected-address"></p>
+      </div>
+
+      <button id="connectButton" class="btn primary">🔗 Connect Wallet</button>
+
+      <div id="fund-result"></div>
+      <div class="input-group">
+        <label for="ethAmount">ETH Amount</label>
+        <input id="ethAmount" placeholder="0.01" />
+      </div>
+
+      <button id="fundButton" class="btn success">🚀 Fund Contract</button>
+
+      <div class="actions">
+        <div>
+          <div id="get-fund"></div>
+          <button id="balanceButton" class="btn ghost">💰 Get Balance</button>
+        </div>
+        <div>
+          <div id="withdraw-result"></div>
+          <button id="withdrawButton" class="btn danger">🏦 Withdraw</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Powered by Ethereum · Built with ❤️</span>
+    </footer>
+  </main>
 
   <script src="./index.js" type="module"></script>
+</body>
+
 </html>

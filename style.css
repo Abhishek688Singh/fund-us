@@ -1,0 +1,179 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0b0f1a;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top left, #6a00ff55, transparent 40%),
+              radial-gradient(circle at bottom right, #00f2ff55, transparent 40%);
+  z-index: -1;
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.header p {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+/* Glass card */
+.glass {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+/* Inputs */
+#fund-result{
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.input-group input {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  margin-top: 0.7rem;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #6a00ff, #00f2ff);
+}
+
+.btn.success {
+  background: linear-gradient(135deg, #00ff99, #00c853);
+}
+
+.btn.danger {
+  background: linear-gradient(135deg, #ff1744, #ff5252);
+}
+
+.btn.ghost {
+  background: rgba(255,255,255,0.12);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.actions .btn {
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.address {
+  width: 100%;
+  max-width: 100%;
+}
+
+#connected-address {
+  word-break: break-all;       /* 👈 forces wrap */
+  overflow-wrap: anywhere;     /* 👈 modern browsers */
+  white-space: normal;         /* 👈 allow multi-line */
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+#fundButton {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#fundButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;   /* 🔥 THIS LINE FIXES EVERYTHING */
+  filter: grayscale(30%);
+}
+
+#fundButton:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  background: linear-gradient(90deg, #00ff88, #00cc66); /* same as normal */
+}
